@@ -1,0 +1,193 @@
+Language model created by QuickLM on Mon Nov 11 11:24:36 EST 2019
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 42 sentences and 44 words
+
+\data\
+ngram 1=44
+ngram 2=84
+ngram 3=42
+
+\1-grams:
+-0.7782 </s> -0.3010
+-0.7782 <s> -0.2218
+-2.4014 APRIL -0.2218
+-2.4014 AUGUST -0.2218
+-2.4014 DECEMBER -0.2218
+-2.4014 EIGHT -0.2218
+-2.4014 EIGHTEEN -0.2218
+-2.4014 ELEVEN -0.2218
+-2.4014 FEBRUARY -0.2218
+-2.4014 FIFTEEN -0.2218
+-2.4014 FIVE -0.2218
+-2.4014 FOUR -0.2218
+-2.4014 FOURTEEN -0.2218
+-2.4014 HOTDOG -0.2218
+-2.4014 JANUARY -0.2218
+-2.4014 JULY -0.2218
+-2.4014 JUNE -0.2218
+-2.4014 MARCH -0.2218
+-2.4014 MAY -0.2218
+-2.4014 NINE -0.2218
+-2.4014 NINETEEN -0.2218
+-2.4014 NINETY -0.2218
+-2.4014 NO -0.2218
+-2.4014 NOVEMBER -0.2218
+-2.4014 OCTOBER -0.2218
+-2.4014 ONE -0.2218
+-2.4014 PIZZA -0.2218
+-2.4014 SALAD -0.2218
+-2.4014 SEPTEMBER -0.2218
+-2.4014 SEVEN -0.2218
+-2.4014 SEVENTEEN -0.2218
+-2.4014 SIX -0.2218
+-2.4014 SIXTEEN -0.2218
+-2.4014 TEN -0.2218
+-2.4014 THIRTEEN -0.2218
+-2.4014 THIRTY -0.2218
+-2.4014 THOUSAND -0.2218
+-2.4014 THREE -0.2218
+-2.4014 TUNA -0.2218
+-2.4014 TWELVE -0.2218
+-2.4014 TWENTY -0.2218
+-2.4014 TWO -0.2218
+-2.4014 YES -0.2218
+-2.4014 ZERO -0.2218
+
+\2-grams:
+-1.9243 <s> APRIL 0.0000
+-1.9243 <s> AUGUST 0.0000
+-1.9243 <s> DECEMBER 0.0000
+-1.9243 <s> EIGHT 0.0000
+-1.9243 <s> EIGHTEEN 0.0000
+-1.9243 <s> ELEVEN 0.0000
+-1.9243 <s> FEBRUARY 0.0000
+-1.9243 <s> FIFTEEN 0.0000
+-1.9243 <s> FIVE 0.0000
+-1.9243 <s> FOUR 0.0000
+-1.9243 <s> FOURTEEN 0.0000
+-1.9243 <s> HOTDOG 0.0000
+-1.9243 <s> JANUARY 0.0000
+-1.9243 <s> JULY 0.0000
+-1.9243 <s> JUNE 0.0000
+-1.9243 <s> MARCH 0.0000
+-1.9243 <s> MAY 0.0000
+-1.9243 <s> NINE 0.0000
+-1.9243 <s> NINETEEN 0.0000
+-1.9243 <s> NINETY 0.0000
+-1.9243 <s> NO 0.0000
+-1.9243 <s> NOVEMBER 0.0000
+-1.9243 <s> OCTOBER 0.0000
+-1.9243 <s> ONE 0.0000
+-1.9243 <s> PIZZA 0.0000
+-1.9243 <s> SALAD 0.0000
+-1.9243 <s> SEPTEMBER 0.0000
+-1.9243 <s> SEVEN 0.0000
+-1.9243 <s> SEVENTEEN 0.0000
+-1.9243 <s> SIX 0.0000
+-1.9243 <s> SIXTEEN 0.0000
+-1.9243 <s> TEN 0.0000
+-1.9243 <s> THIRTEEN 0.0000
+-1.9243 <s> THIRTY 0.0000
+-1.9243 <s> THOUSAND 0.0000
+-1.9243 <s> THREE 0.0000
+-1.9243 <s> TUNA 0.0000
+-1.9243 <s> TWELVE 0.0000
+-1.9243 <s> TWENTY 0.0000
+-1.9243 <s> TWO 0.0000
+-1.9243 <s> YES 0.0000
+-1.9243 <s> ZERO 0.0000
+-0.3010 APRIL </s> -0.3010
+-0.3010 AUGUST </s> -0.3010
+-0.3010 DECEMBER </s> -0.3010
+-0.3010 EIGHT </s> -0.3010
+-0.3010 EIGHTEEN </s> -0.3010
+-0.3010 ELEVEN </s> -0.3010
+-0.3010 FEBRUARY </s> -0.3010
+-0.3010 FIFTEEN </s> -0.3010
+-0.3010 FIVE </s> -0.3010
+-0.3010 FOUR </s> -0.3010
+-0.3010 FOURTEEN </s> -0.3010
+-0.3010 HOTDOG </s> -0.3010
+-0.3010 JANUARY </s> -0.3010
+-0.3010 JULY </s> -0.3010
+-0.3010 JUNE </s> -0.3010
+-0.3010 MARCH </s> -0.3010
+-0.3010 MAY </s> -0.3010
+-0.3010 NINE </s> -0.3010
+-0.3010 NINETEEN </s> -0.3010
+-0.3010 NINETY </s> -0.3010
+-0.3010 NO </s> -0.3010
+-0.3010 NOVEMBER </s> -0.3010
+-0.3010 OCTOBER </s> -0.3010
+-0.3010 ONE </s> -0.3010
+-0.3010 PIZZA </s> -0.3010
+-0.3010 SALAD </s> -0.3010
+-0.3010 SEPTEMBER </s> -0.3010
+-0.3010 SEVEN </s> -0.3010
+-0.3010 SEVENTEEN </s> -0.3010
+-0.3010 SIX </s> -0.3010
+-0.3010 SIXTEEN </s> -0.3010
+-0.3010 TEN </s> -0.3010
+-0.3010 THIRTEEN </s> -0.3010
+-0.3010 THIRTY </s> -0.3010
+-0.3010 THOUSAND </s> -0.3010
+-0.3010 THREE </s> -0.3010
+-0.3010 TUNA </s> -0.3010
+-0.3010 TWELVE </s> -0.3010
+-0.3010 TWENTY </s> -0.3010
+-0.3010 TWO </s> -0.3010
+-0.3010 YES </s> -0.3010
+-0.3010 ZERO </s> -0.3010
+
+\3-grams:
+-0.3010 <s> APRIL </s>
+-0.3010 <s> AUGUST </s>
+-0.3010 <s> DECEMBER </s>
+-0.3010 <s> EIGHT </s>
+-0.3010 <s> EIGHTEEN </s>
+-0.3010 <s> ELEVEN </s>
+-0.3010 <s> FEBRUARY </s>
+-0.3010 <s> FIFTEEN </s>
+-0.3010 <s> FIVE </s>
+-0.3010 <s> FOUR </s>
+-0.3010 <s> FOURTEEN </s>
+-0.3010 <s> HOTDOG </s>
+-0.3010 <s> JANUARY </s>
+-0.3010 <s> JULY </s>
+-0.3010 <s> JUNE </s>
+-0.3010 <s> MARCH </s>
+-0.3010 <s> MAY </s>
+-0.3010 <s> NINE </s>
+-0.3010 <s> NINETEEN </s>
+-0.3010 <s> NINETY </s>
+-0.3010 <s> NO </s>
+-0.3010 <s> NOVEMBER </s>
+-0.3010 <s> OCTOBER </s>
+-0.3010 <s> ONE </s>
+-0.3010 <s> PIZZA </s>
+-0.3010 <s> SALAD </s>
+-0.3010 <s> SEPTEMBER </s>
+-0.3010 <s> SEVEN </s>
+-0.3010 <s> SEVENTEEN </s>
+-0.3010 <s> SIX </s>
+-0.3010 <s> SIXTEEN </s>
+-0.3010 <s> TEN </s>
+-0.3010 <s> THIRTEEN </s>
+-0.3010 <s> THIRTY </s>
+-0.3010 <s> THOUSAND </s>
+-0.3010 <s> THREE </s>
+-0.3010 <s> TUNA </s>
+-0.3010 <s> TWELVE </s>
+-0.3010 <s> TWENTY </s>
+-0.3010 <s> TWO </s>
+-0.3010 <s> YES </s>
+-0.3010 <s> ZERO </s>
+
+\end\
