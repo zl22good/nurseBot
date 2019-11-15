@@ -45,7 +45,7 @@ def main():
 
 	#Greet Patients
 	s = "Hello " + patientName
-    	soundhandle.say(s, voice)
+    soundhandle.say(s, voice)
 	time.sleep(3)
 	#Start Question 1
 	validAnswer = False;
