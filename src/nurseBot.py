@@ -59,8 +59,13 @@ def main():
 			
 		if(birthYear1 in lastWords or birthYear2 in lastWords):
 			s = "Thank you!"
+			print("3")
+
 			soundhandle.say(s, voice)
+			print("3")
+
 			time.sleep(3)
+			print("3")
 			validAnswer = True
 			print("3")
 		else:
