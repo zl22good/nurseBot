@@ -33,7 +33,7 @@ def main():
 	global birthMonth2
 	global birthDay
 	global validAnswer
-	print("1")
+	
 
 	savedPain = "null"
 	wantFood = "null"
@@ -65,9 +65,10 @@ def main():
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
-			time.sleep(4)
+			time.sleep(3)
 	
 	#Start Question 2
+	print("2")
 	validAnswer = False;
 	while(validAnswer == False):
 		s = "What is your birth month?"
