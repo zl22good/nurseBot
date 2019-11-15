@@ -62,6 +62,7 @@ def main():
 			soundhandle.say(s, voice)
 			time.sleep(3)
 			validAnswer = True
+			print("3")
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
