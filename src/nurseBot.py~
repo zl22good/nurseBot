@@ -45,7 +45,11 @@ def main():
 
 	#Greet Patients
 	s = "Hello " + patientName
+<<<<<<< HEAD
 	soundhandle.say(s, voice);
+=======
+    soundhandle.say(s, voice)
+>>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
 	time.sleep(3)
 	#Start Question 1
 	validAnswer = False;
@@ -58,6 +62,8 @@ def main():
 			s = ""
 			
 		if(birthYear1 in lastWords or birthYear2 in lastWords):
+<<<<<<< HEAD
+=======
 			s = "Thank you!"
 			print("3")
 
@@ -71,6 +77,59 @@ def main():
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
+			time.sleep(3)
+	
+	#Start Question 2
+	print("2")
+	validAnswer = False;
+	while(validAnswer == False):
+		s = "What is your birth month?"
+		soundhandle.say(s, voice)
+	
+		listening = True
+		while(listening):
+			s = ""
+			
+		if(birthMonth1 in lastWords or birthMonth2 in lastWords):
+>>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
+			s = "Thank you!"
+			print("3")
+
+			soundhandle.say(s, voice)
+<<<<<<< HEAD
+			print("3")
+
+			time.sleep(3)
+			print("3")
+=======
+			time.sleep(3)
+			validAnswer = True
+		else:
+			s = "Try again, you said " + lastWords;
+			soundhandle.say(s, voice)
+			time.sleep(4)
+
+	#Start Question 3
+	validAnswer = False;
+	while(validAnswer == False):
+		s = "What is your birth day?"
+		soundhandle.say(s, voice)
+	
+		listening = True
+		while(listening):
+			s = ""
+			
+		if(birthDay in lastWords):
+			s = "Thank you! Identity Confrimed!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+>>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
+			validAnswer = True
+			print("3")
+		else:
+			s = "Try again, you said " + lastWords;
+			soundhandle.say(s, voice)
+<<<<<<< HEAD
 			time.sleep(3)
 	
 	#Start Question 2
@@ -112,6 +171,196 @@ def main():
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
+			time.sleep(4)
+	
+	#Start Question 4
+	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
+	soundhandle.say(s, voice)
+	time.sleep(6)
+	validAnswer = False;
+	while(validAnswer == False):
+			
+		listening = True
+		while(listening):
+			s = ""
+			
+		if("zero" in lastWords):
+			savedPain = "zero"
+			s = "Good, your pain is low today!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("one" in lastWords):
+			savedPain = "one"
+			s = "Good, your pain is low today!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("two" in lastWords):
+			savedPain = "two"
+			s = "Good, your pain is low today!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("three" in lastWords):
+			savedPain = "three"
+			s = "Good, your pain is low today!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("four" in lastWords):
+			savedPain = "four"
+			s = "Good, your pain is low today!"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("five" in lastWords):
+			savedPain = "five"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("six" in lastWords):
+			savedPain = "six"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("seven" in lastWords):
+			savedPain = "seven"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("eight" in lastWords):
+			savedPain = "eight"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("nine" in lastWords):
+			savedPain = "nine"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		elif("ten" in lastWords):
+			savedPain = "ten"
+			s = "Oh no your pain is high today! We will tell the nurse"
+			soundhandle.say(s, voice)
+			time.sleep(4)
+			validAnswer = True
+		else:
+			s = "Try again, you said " + lastWords;
+			soundhandle.say(s, voice)
+			time.sleep(4)
+
+	#Question 5
+	if(savedPain == "zero" or savedPain == "one" 
+	or savedPain == "two" or savedPain == "three" or savedPain == "four"):
+		s = "Would you like anything to eat?"
+		soundhandle.say(s, voice)
+		time.sleep(6)
+		validAnswer = False;
+		while(validAnswer == False):
+			listening = True
+			while(listening):
+				s = ""
+			if("yes" in lastWords):
+				wantFood = "yes"
+				validAnswer = True
+			elif("no" in lastWords):
+				wantFood = "no"
+				validAnswer = True
+			else:
+				s = "Try again, you said " + lastWords;
+				soundhandle.say(s, voice)
+				time.sleep(4)
+		if(wantFood == "yes"):
+			s = "Your options are Tuna, Pizza, Salad, or Hotdog"
+			soundhandle.say(s, voice)
+			time.sleep(6)
+			validAnswer = False;
+			while(validAnswer == False):
+				s = "Please state your option"
+				soundhandle.say(s, voice)
+				time.sleep(5)
+				listening = True
+				while(listening):
+					s = ""
+				if("tuna" in lastWords):
+					wantFood = "tuna"
+					validAnswer = True
+				elif("pizza" in lastWords):
+					wantFood = "pizza"
+					validAnswer = True
+				elif("salad" in lastWords):
+					wantFood = "salad"
+					validAnswer = True
+				elif("hotdog" in lastWords):
+					wantFood = "hotdog"
+					validAnswer = True
+				else:
+					s = "Try again, you said " + lastWords;
+					soundhandle.say(s, voice)
+					time.sleep(4)
+					s = "Do you need the food options again?"
+					soundhandle.say(s, voice)
+					time.sleep(4)
+					while(validAnswer == False):
+						listening = True
+						while(listening):
+							s = ""
+						if("yes" in lastWords):
+							s = "Your options are Tuna, Pizza, Salad, or Hotdog"
+							soundhandle.say(s, voice)
+							time.sleep(5)
+							validAnswer = True
+						elif("no" in lastWords):
+							validAnswer = True
+					validAnswer = False
+
+	#Question 6
+	s = "Do you need the nurse?"
+	soundhandle.say(s, voice)
+	time.sleep(4)
+	validAnswer = False;
+	while(validAnswer == False):
+		listening = True
+		while(listening):
+			s = ""
+		if("yes" in lastWords):
+			wantNurse = "yes"
+			s = "Okay, well let the nurse know. Hope you fell better"
+			soundhandle.say(s, voice)
+			time.sleep(5)
+			validAnswer = True
+		elif("no" in lastWords):
+			wantNurse = "no"
+			s = "Okay, have a great day"
+			soundhandle.say(s, voice)
+			time.sleep(3)
+			validAnswer = True
+		else:
+			s = "Try again, you said " + lastWords;
+			soundhandle.say(s, voice)
+			time.sleep(4)
+
+
+	#Giving report
+	s = "Are you ready for the report on " + patientName
+	soundhandle.say(s, voice)
+	time.sleep(5)
+	validAnswer = False;
+	while(validAnswer == False):
+		listening = True
+		while(listening):
+			s = ""
+		if("yes" in lastWords):
+			validAnswer = True
+
+	
+=======
 			time.sleep(4)
 	
 	#Start Question 4
@@ -302,6 +551,7 @@ def main():
 			validAnswer = True
 
 	
+>>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
 	s = "The patients pain level is " + savedPain
 	soundhandle.say(s, voice)
 	time.sleep(4)
