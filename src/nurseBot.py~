@@ -45,11 +45,7 @@ def main():
 
 	#Greet Patients
 	s = "Hello " + patientName
-<<<<<<< HEAD
 	soundhandle.say(s, voice);
-=======
-    soundhandle.say(s, voice)
->>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
 	time.sleep(3)
 	#Start Question 1
 	validAnswer = False;
@@ -62,8 +58,6 @@ def main():
 			s = ""
 			
 		if(birthYear1 in lastWords or birthYear2 in lastWords):
-<<<<<<< HEAD
-=======
 			s = "Thank you!"
 			print("3")
 
@@ -91,17 +85,8 @@ def main():
 			s = ""
 			
 		if(birthMonth1 in lastWords or birthMonth2 in lastWords):
->>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
 			s = "Thank you!"
-			print("3")
-
 			soundhandle.say(s, voice)
-<<<<<<< HEAD
-			print("3")
-
-			time.sleep(3)
-			print("3")
-=======
 			time.sleep(3)
 			validAnswer = True
 		else:
@@ -123,13 +108,12 @@ def main():
 			s = "Thank you! Identity Confrimed!"
 			soundhandle.say(s, voice)
 			time.sleep(4)
->>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
 			validAnswer = True
 			print("3")
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
-<<<<<<< HEAD
+
 			time.sleep(3)
 	
 	#Start Question 2
@@ -360,7 +344,6 @@ def main():
 			validAnswer = True
 
 	
-=======
 			time.sleep(4)
 	
 	#Start Question 4
@@ -551,7 +534,7 @@ def main():
 			validAnswer = True
 
 	
->>>>>>> 4bbf99758f5508405158beaa47bdc9835fd38a34
+
 	s = "The patients pain level is " + savedPain
 	soundhandle.say(s, voice)
 	time.sleep(4)

@@ -347,8 +347,7 @@ def main():
 			time.sleep(4)
 	
 	#Start Question 4
-	s = "Are you in any pain? On a scale" +
-	" from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
+	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
 	soundhandle.say(s, voice)
 	time.sleep(6)
 	validAnswer = False;
