@@ -2,11 +2,13 @@
     
 import rospy 
 import time
+import numpy
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
 from sound_play.msg import SoundRequest
 from sound_play.libsoundplay import SoundClient
+
 
 linear = 0.05;
 angular = 0.05;
@@ -40,6 +42,37 @@ def main():
 	wantNuse = "null"
 	voice = 'voice_kal_diphone'
 	
+	#Wait for nurse to tell which room to see
+	validAnswer = False
+	while(validAnswer == False):
+		s = "Which room would you like me to check?
+		soundhandle.say(s, voice)
+	
+		listening = True
+		while(listening):
+			s = ""
+
+		if("one" in lastWords):
+			movment1 = 180
+			movment2 = .5
+			movment3 = 90
+			movment4 = 1
+			movment5 = -90
+			movment6 = .25
+
+		elif("two" in lastWords):
+			movment1 = 180
+			movment2 = .5
+			movment3 = 90
+			movment4 = 2
+			movment5 = -90
+			movment6 = .25
+
+	#Move to that patient
+	turn(movment1)
+
+	#Scan ar code
+
 	#Get the patients data
 	getPatientdata();
 
@@ -329,22 +362,6 @@ def main():
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
 			time.sleep(4)
-
-
-	#Giving report
-	s = "Are you ready for the report on " + patientName
-	soundhandle.say(s, voice)
-	time.sleep(5)
-	validAnswer = False;
-	while(validAnswer == False):
-		listening = True
-		while(listening):
-			s = ""
-		if("yes" in lastWords):
-			validAnswer = True
-
-	
-			time.sleep(4)
 	
 	#Start Question 4
 	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
@@ -520,6 +537,8 @@ def main():
 			time.sleep(4)
 
 
+	#Go back to the nurse station
+	
 	#Giving report
 	s = "Are you ready for the report on " + patientName
 	soundhandle.say(s, voice)
@@ -575,6 +594,21 @@ def getPatientdata():
 
 		
 	
+def moveFoward(dist):
+	global t
+
+
+
+
+def turn(angle):
+	global t
+	rads = numpy.radians(angle)
+	angSpeed = 0.5
+	angInvers = angSpeed ** (-1)
+	sleepTime = rads * angInvers;
+	t.angular.z = angSpeed
+	time.sleep(sleepTime)
+	t.angular.z = 0
 
 	
 	
