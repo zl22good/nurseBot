@@ -59,6 +59,7 @@ def main():
 			movment4 = 1
 			movment5 = 90
 			movment6 = .25
+			validAnswer = True
 
 		elif("two" in lastWords):
 			movment1 = 180
@@ -67,6 +68,7 @@ def main():
 			movment4 = 2
 			movment5 = -90
 			movment6 = .25
+			validAnswer = True
 
 	#Move to that patient
 	turn(movment1)
@@ -543,7 +545,15 @@ def main():
 
 
 	#Go back to the nurse station
+	turn(movment1)
+	moveFoward(movment6)
+	turn(-movment5)
+	moveFoward(movment4)
+	turn(-movment3)
+	moveFoward(movment2)
 	
+	
+
 	#Giving report
 	s = "Are you ready for the report on " + patientName
 	soundhandle.say(s, voice)
