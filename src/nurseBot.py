@@ -668,13 +668,12 @@ def callback(data):
 
 
 def talker(moveTime):     
-	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, 	  	queue_size=10) 
-    start_time = time.time()
 	global t
-	while((time.time() - start_time) < moveTime):
+	start = time.time()
+	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist,queue_size=10)
+	while(((time.time() - start) < moveTime)):
+		pub.publish(t)
 
-		pub.publish(t);
-     	
 def listener():     
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)  
