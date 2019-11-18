@@ -628,8 +628,9 @@ def turn(angle):
 	angInvers = angSpeed ** (-1)
 	sleepTime = rads * angInvers;
 	t.angular.z = angSpeed
-	rospy.loginfo("angInvers: %s, sleepTime: %s",angInvers,sleepTime) 
+	rospy.loginfo("t.angular.z: %s, sleepTime: %s",t.angular.z,sleepTime) 
 	time.sleep(sleepTime)
+	rospy.loginfo("sleepTime: %s",sleepTime) 
 	t.angular.z = 0
 
 	
@@ -659,7 +660,7 @@ def talker():
 def listener():     
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)     
-     #talker()
+     talker()
      main()
      rospy.spin() 
 
