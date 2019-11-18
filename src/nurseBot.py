@@ -53,6 +53,8 @@ def main():
 			s = ""
 
 		if("one" in lastWords):
+			s = "Going to room one"
+			soundhandle.say(s, voice)
 			movment1 = 180
 			movment2 = .5
 			movment3 = 90
@@ -62,6 +64,8 @@ def main():
 			validAnswer = True
 
 		elif("two" in lastWords):
+			s = "Going to room two"
+			soundhandle.say(s, voice)
 			movment1 = 180
 			movment2 = .5
 			movment3 = 90
@@ -79,16 +83,20 @@ def main():
 	moveFoward(movment6)
 
 	#Scan ar code
+	s = "Hello, Nurse bot here! Please show me your patient marker"
+	soundhandle.say(s, voice)
+
+
 
 	#Get the patients data
 	getPatientdata();
 
 	#Greet Patients
 	s = "Hello " + patientName
-	soundhandle.say(s, voice);
+	soundhandle.say(s, voice)
 	time.sleep(3)
 	#Start Question 1
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		s = "What is your birth year?"
 		soundhandle.say(s, voice)
@@ -99,15 +107,10 @@ def main():
 			
 		if(birthYear1 in lastWords or birthYear2 in lastWords):
 			s = "Thank you!"
-			print("3")
-
 			soundhandle.say(s, voice)
-			print("3")
-
 			time.sleep(3)
-			print("3")
 			validAnswer = True
-			print("3")
+			
 		else:
 			s = "Try again, you said " + lastWords;
 			soundhandle.say(s, voice)
@@ -606,6 +609,20 @@ def getPatientdata():
 		birthMonth1 = "june"
 		birthMonth2 = "six"
 		birthDay = "nineteen"
+	elif foundMarker == 2:
+		patientName = "Sarah"
+		birthYear1 = "two thousand four"
+		birthYear2 = "twenty zero four"
+		birthMonth1 = "september"
+		birthMonth2 = "9"
+		birthDay = "three"
+	elif foundMarker == 3:
+		patientName = "Bob"
+		birthYear1 = "two thousand sixteen"
+		birthYear2 = "twenty sixteen"
+		birthMonth1 = "febuary"
+		birthMonth2 = "six"
+		birthDay = "thirty"
 
 		
 	
@@ -615,7 +632,8 @@ def moveFoward(dist):
 	speedInvers = speed ** (-1)
 	sleepTime = speedInvers * dist
 	t.linear.x = speed
-	time.sleep(sleepTime)
+	#time.sleep(sleepTime)
+	talker(sleepTime)
 	t.linear.z = 0
 
 
@@ -649,23 +667,24 @@ def callback(data):
 		rospy.loginfo("listening: %s, Hear: %s",listening,data.data) 
 
 
-def talker():     
+def talker(moveTime):     
 	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, 	  	queue_size=10) 
-     
+    start_time = time.time()
 	global t
-	while not rospy.is_shutdown():
+	while((time.time() - start_time) < moveTime):
 
 		pub.publish(t);
      	
 def listener():     
      rospy.init_node('listener',anonymous = False)
-     rospy.Subscriber("/recognizer/output", String, callback)     
+     rospy.Subscriber("/recognizer/output", String, callback)  
+	 #talker()   
      main()
      rospy.spin() 
 
 if __name__ == '__main__':     
      listener() 
-	 talker()
+	 
 
 
     
