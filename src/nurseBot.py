@@ -45,7 +45,7 @@ def main():
 	#Wait for nurse to tell which room to see
 	validAnswer = False
 	while(validAnswer == False):
-		s = "Which room would you like me to check?
+		s = "Which room would you like me to check?"
 		soundhandle.say(s, voice)
 	
 		listening = True
@@ -57,7 +57,7 @@ def main():
 			movment2 = .5
 			movment3 = 90
 			movment4 = 1
-			movment5 = -90
+			movment5 = 90
 			movment6 = .25
 
 		elif("two" in lastWords):
@@ -70,6 +70,11 @@ def main():
 
 	#Move to that patient
 	turn(movment1)
+	moveFoward(movment2)
+	turn(movment3)
+	moveFoward(movment4)
+	turn(movment5)
+	moveFoward(movment6)
 
 	#Scan ar code
 
@@ -596,6 +601,12 @@ def getPatientdata():
 	
 def moveFoward(dist):
 	global t
+	speed = 0.25
+	speedInvers = speed ** (-1)
+	sleepTime = speedInvers * dist
+	t.linear.x = speed
+	time.sleep(sleepTime)
+	t.linear.z = 0
 
 
 
