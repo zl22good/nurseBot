@@ -634,7 +634,7 @@ def moveFoward(dist):
 	t.linear.x = speed
 	#time.sleep(sleepTime)
 	talker(sleepTime)
-	t.linear.z = 0
+	t.linear.x = 0
 
 
 
