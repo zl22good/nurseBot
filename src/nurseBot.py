@@ -660,12 +660,12 @@ def talker():
 def listener():     
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)     
-     talker()
      main()
      rospy.spin() 
 
 if __name__ == '__main__':     
      listener() 
+	 talker()
 
 
     
