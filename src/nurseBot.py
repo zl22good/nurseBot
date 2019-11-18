@@ -628,6 +628,7 @@ def turn(angle):
 	angInvers = angSpeed ** (-1)
 	sleepTime = rads * angInvers;
 	t.angular.z = angSpeed
+	rospy.loginfo("angInvers: %s, sleepTime: %s",angInvers,sleepTime) 
 	time.sleep(sleepTime)
 	t.angular.z = 0
 
@@ -644,7 +645,7 @@ def callback(data):
 	
 		
 
-		rospy.loginfo(rospy.get_caller_id()+"listening: %s, Hear: %s",listening,data.data) 
+		rospy.loginfo("listening: %s, Hear: %s",listening,data.data) 
 
 
 def talker():     
