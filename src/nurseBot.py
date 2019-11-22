@@ -59,9 +59,9 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 260
 			movment2 = .5
-			movment3 = -110
+			movment3 = -130
 			movment4 = 1
-			movment5 = -100
+			movment5 = -130
 			movment6 = .25
 			validAnswer = True
 
@@ -92,6 +92,7 @@ def main():
 	foundMarker = "False"
 	while(foundMarker == "False"):
 		s = ""
+		rospy.loginfo("foundMarker - %s", foundMarker)
 
 
 	#Get the patients data
