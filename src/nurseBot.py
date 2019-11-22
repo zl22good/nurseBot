@@ -24,6 +24,7 @@ birthMonth1 = -1
 birthMonth2 = -1
 birthDay = -1
 validAnswer = False
+foundMarker = ""
 def main():
 	global lastWords
 	global listening
@@ -56,7 +57,7 @@ def main():
 		if("one" in lastWords):
 			s = "Going to room one"
 			soundhandle.say(s, voice)
-			movment1 = 180
+			movment1 = 240
 			movment2 = .5
 			movment3 = -90
 			movment4 = 2
