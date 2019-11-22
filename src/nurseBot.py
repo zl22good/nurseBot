@@ -684,6 +684,7 @@ def talker(moveTime):
 
 def callback2(data):
 	global foundMarker
+	foundMarker = "False"
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
 	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
