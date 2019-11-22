@@ -71,8 +71,7 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 260
 			movment2 = .5
-			movment3 = -120
-
+			movment3 = -110
 			movment4 = 3
 			movment5 = -100
 			movment6 = .25
@@ -85,6 +84,8 @@ def main():
 	moveFoward(movment4)
 	turn(movment5)
 	moveFoward(movment6)
+
+	time.sleep(8)
 
 	#Go back to the nurse station test
 	turn(-movment1)
