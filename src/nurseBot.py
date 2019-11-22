@@ -71,7 +71,8 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 260
 			movment2 = .5
-			movment3 = -110
+			movment3 = -120
+			
 			movment4 = 3
 			movment5 = -100
 			movment6 = .25
