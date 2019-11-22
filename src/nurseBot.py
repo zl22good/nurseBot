@@ -171,47 +171,6 @@ def main():
 
 			time.sleep(3)
 	
-	#Start Question 2
-	print("2")
-	validAnswer = False
-	while(validAnswer == False):
-		s = "What is your birth month?"
-		soundhandle.say(s, voice)
-	
-		listening = True
-		while(listening):
-			s = ""
-			
-		if(birthMonth1 in lastWords or birthMonth2 in lastWords):
-			s = "Thank you!"
-			soundhandle.say(s, voice)
-			time.sleep(3)
-			validAnswer = True
-		else:
-			s = "Try again, you said " + lastWords
-			soundhandle.say(s, voice)
-			time.sleep(4)
-
-	#Start Question 3
-	validAnswer = False
-	while(validAnswer == False):
-		s = "What is your birth day?"
-		soundhandle.say(s, voice)
-	
-		listening = True
-		while(listening):
-			s = ""
-			
-		if(birthDay in lastWords):
-			s = "Thank you! Identity Confrimed!"
-			soundhandle.say(s, voice)
-			time.sleep(4)
-			validAnswer = True
-		else:
-			s = "Try again, you said " + lastWords
-			soundhandle.say(s, voice)
-			time.sleep(4)
-	
 	#Start Question 4
 	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
 	soundhandle.say(s, voice)
@@ -626,7 +585,7 @@ def getPatientdata():
 		birthYear1 = "two thousand four"
 		birthYear2 = "twenty zero four"
 		birthMonth1 = "september"
-		birthMonth2 = "9"
+		birthMonth2 = "nine"
 		birthDay = "three"
 	elif foundMarker == "3":
 		patientName = "Bob"
