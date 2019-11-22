@@ -36,6 +36,7 @@ def main():
 	global birthMonth2
 	global birthDay
 	global validAnswer
+	global foundMarker
 	
 
 	savedPain = "null"
@@ -61,7 +62,7 @@ def main():
 			movment2 = .5
 			movment3 = -120
 			movment4 = 1
-			movment5 = -120
+			movment5 = -110
 			movment6 = .25
 			validAnswer = True
 
