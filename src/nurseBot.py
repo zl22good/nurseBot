@@ -59,9 +59,9 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 260
 			movment2 = .5
-			movment3 = -130
+			movment3 = -120
 			movment4 = 1
-			movment5 = -130
+			movment5 = -120
 			movment6 = .25
 			validAnswer = True
 
@@ -685,13 +685,16 @@ def callback2(data):
 	global foundMarker
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
+	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
 			
 
 def listener():     
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)  	 
      rospy.Subscriber("/ar_pose_marker",AlvarMarkers,callback2)
-     main()
+     global foundMarker
+	 foundMarker = "False"
+	 #main()
      rospy.spin() 
 
 if __name__ == '__main__':     
