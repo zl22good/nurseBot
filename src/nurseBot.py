@@ -62,7 +62,7 @@ def main():
 			movment2 = .5
 			movment3 = -120
 			movment4 = 1.5
-			movment5 = -100
+			movment5 = -90
 			movment6 = .25
 			validAnswer = True
 
