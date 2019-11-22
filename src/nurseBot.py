@@ -62,7 +62,7 @@ def main():
 			movment2 = .5
 			movment3 = -120
 			movment4 = 1
-			movment5 = -110
+			movment5 = -100
 			movment6 = .25
 			validAnswer = True
 
@@ -614,21 +614,21 @@ def getPatientdata():
 	global birthMonth1
 	global birthMonth2
 	global birthDay
-	if foundMarker == 1:
+	if foundMarker == "1":
 		patientName = "Zachary"
 		birthYear1 = "nineteen ninety"
 		birthYear2 = "nineteen ninety"
 		birthMonth1 = "june"
 		birthMonth2 = "six"
 		birthDay = "nineteen"
-	elif foundMarker == 2:
+	elif foundMarker == "2":
 		patientName = "Sarah"
 		birthYear1 = "two thousand four"
 		birthYear2 = "twenty zero four"
 		birthMonth1 = "september"
 		birthMonth2 = "9"
 		birthDay = "three"
-	elif foundMarker == 3:
+	elif foundMarker == "3":
 		patientName = "Bob"
 		birthYear1 = "two thousand sixteen"
 		birthYear2 = "twenty sixteen"
@@ -644,7 +644,6 @@ def moveFoward(dist):
 	speedInvers = speed ** (-1)
 	sleepTime = speedInvers * dist
 	t.linear.x = speed
-	#time.sleep(sleepTime)
 	talker(sleepTime)
 	t.linear.x = 0
 
@@ -685,7 +684,6 @@ def talker(moveTime):
 
 def callback2(data):
 	global foundMarker
-	#foundMarker = "False"
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
 	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
