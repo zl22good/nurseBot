@@ -58,9 +58,9 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 180
 			movment2 = .5
-			movment3 = 90
-			movment4 = 1
-			movment5 = 90
+			movment3 = -90
+			movment4 = 2
+			movment5 = -90
 			movment6 = .25
 			validAnswer = True
 
@@ -69,8 +69,8 @@ def main():
 			soundhandle.say(s, voice)
 			movment1 = 180
 			movment2 = .5
-			movment3 = 90
-			movment4 = 2
+			movment3 = -90
+			movment4 = 4
 			movment5 = -90
 			movment6 = .25
 			validAnswer = True
