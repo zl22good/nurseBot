@@ -92,7 +92,8 @@ def main():
 	foundMarker = "False"
 	while(foundMarker == "False"):
 		s = ""
-		rospy.loginfo("foundMarker - %s", foundMarker)
+	
+	rospy.loginfo("foundMarker - %s", foundMarker)
 
 
 	#Get the patients data
@@ -683,7 +684,6 @@ def talker(moveTime):
 
 def callback2(data):
 	global foundMarker
-	foundMarker = "False"
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
 	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
@@ -693,7 +693,7 @@ def listener():
     rospy.init_node('listener',anonymous = False)
     rospy.Subscriber("/recognizer/output", String, callback)  	 
     rospy.Subscriber("/ar_pose_marker",AlvarMarkers,callback2)
-    main()
+    #main()
     rospy.spin() 
 
 if __name__ == '__main__':     
