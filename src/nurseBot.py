@@ -357,9 +357,9 @@ def main():
 	#Go back to the nurse station
 	turn(movment1)
 	moveFoward(movment6)
-	turn(-movment5)
-	moveFoward(movment4)
 	turn(-movment3)
+	moveFoward(movment4)
+	turn(-movment5)
 	moveFoward(movment2)
 	
 	
