@@ -10,20 +10,20 @@ from sound_play.msg import SoundRequest
 from sound_play.libsoundplay import SoundClient
 
 
-linear = 0.05;
-angular = 0.05;
-soundhandle = SoundClient();
-t = Twist();
-lastWords = "";
-listening = False;
-foundMarker = 1;
-patientName = "";
-birthYear1 = -1;
-birthYear2 = -1;
-birthMonth1 = -1;
-birthMonth2 = -1;
-birthDay = -1;
-validAnswer = False;
+
+soundhandle = SoundClient()
+t = Twist()
+linear = 0.05
+angular = 0.05
+lastWords = ""
+listening = False
+patientName = ""
+birthYear1 = -1
+birthYear2 = -1
+birthMonth1 = -1
+birthMonth2 = -1
+birthDay = -1
+validAnswer = False
 def main():
 	global lastWords
 	global listening
@@ -39,7 +39,8 @@ def main():
 
 	savedPain = "null"
 	wantFood = "null"
-	wantNuse = "null"
+	wantNurse = "null"
+	foundMarker = "null"
 	voice = 'voice_kal_diphone'
 	
 	#Wait for nurse to tell which room to see
@@ -85,11 +86,18 @@ def main():
 	#Scan ar code
 	s = "Hello, Nurse bot here! Please show me your patient marker"
 	soundhandle.say(s, voice)
+	time.sleep(2)
 
+	foundMarker = False
+	while(foundMarker == False):
+		s = ""
 
 
 	#Get the patients data
-	getPatientdata();
+	s = "Thank you, Getting your data"
+	soundhandle.say(s, voice)
+	time.sleep(2)
+	getPatientdata()
 
 	#Greet Patients
 	s = "Hello " + patientName
@@ -112,13 +120,13 @@ def main():
 			validAnswer = True
 			
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(3)
 	
 	#Start Question 2
 	print("2")
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		s = "What is your birth month?"
 		soundhandle.say(s, voice)
@@ -133,12 +141,12 @@ def main():
 			time.sleep(3)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 
 	#Start Question 3
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		s = "What is your birth day?"
 		soundhandle.say(s, voice)
@@ -154,14 +162,14 @@ def main():
 			validAnswer = True
 			print("3")
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 
 			time.sleep(3)
 	
 	#Start Question 2
 	print("2")
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		s = "What is your birth month?"
 		soundhandle.say(s, voice)
@@ -176,12 +184,12 @@ def main():
 			time.sleep(3)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 
 	#Start Question 3
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		s = "What is your birth day?"
 		soundhandle.say(s, voice)
@@ -196,7 +204,7 @@ def main():
 			time.sleep(4)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 	
@@ -204,7 +212,7 @@ def main():
 	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
 	soundhandle.say(s, voice)
 	time.sleep(6)
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 			
 		listening = True
@@ -278,7 +286,7 @@ def main():
 			time.sleep(4)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 
@@ -288,7 +296,7 @@ def main():
 		s = "Would you like anything to eat?"
 		soundhandle.say(s, voice)
 		time.sleep(6)
-		validAnswer = False;
+		validAnswer = False
 		while(validAnswer == False):
 			listening = True
 			while(listening):
@@ -300,14 +308,14 @@ def main():
 				wantFood = "no"
 				validAnswer = True
 			else:
-				s = "Try again, you said " + lastWords;
+				s = "Try again, you said " + lastWords
 				soundhandle.say(s, voice)
 				time.sleep(4)
 		if(wantFood == "yes"):
 			s = "Your options are Tuna, Pizza, Salad, or Hotdog"
 			soundhandle.say(s, voice)
 			time.sleep(6)
-			validAnswer = False;
+			validAnswer = False
 			while(validAnswer == False):
 				s = "Please state your option"
 				soundhandle.say(s, voice)
@@ -328,7 +336,7 @@ def main():
 					wantFood = "hotdog"
 					validAnswer = True
 				else:
-					s = "Try again, you said " + lastWords;
+					s = "Try again, you said " + lastWords
 					soundhandle.say(s, voice)
 					time.sleep(4)
 					s = "Do you need the food options again?"
@@ -351,7 +359,7 @@ def main():
 	s = "Do you need the nurse?"
 	soundhandle.say(s, voice)
 	time.sleep(4)
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		listening = True
 		while(listening):
@@ -369,7 +377,7 @@ def main():
 			time.sleep(3)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 	
@@ -377,7 +385,7 @@ def main():
 	s = "Are you in any pain? On a scale from 0 to 10, 0 beging no pain and 10 being the worst pain ever."
 	soundhandle.say(s, voice)
 	time.sleep(6)
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 			
 		listening = True
@@ -451,7 +459,7 @@ def main():
 			time.sleep(4)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 
@@ -461,7 +469,7 @@ def main():
 		s = "Would you like anything to eat?"
 		soundhandle.say(s, voice)
 		time.sleep(6)
-		validAnswer = False;
+		validAnswer = False
 		while(validAnswer == False):
 			listening = True
 			while(listening):
@@ -473,14 +481,14 @@ def main():
 				wantFood = "no"
 				validAnswer = True
 			else:
-				s = "Try again, you said " + lastWords;
+				s = "Try again, you said " + lastWords
 				soundhandle.say(s, voice)
 				time.sleep(4)
 		if(wantFood == "yes"):
 			s = "Your options are Tuna, Pizza, Salad, or Hotdog"
 			soundhandle.say(s, voice)
 			time.sleep(6)
-			validAnswer = False;
+			validAnswer = False
 			while(validAnswer == False):
 				s = "Please state your option"
 				soundhandle.say(s, voice)
@@ -501,7 +509,7 @@ def main():
 					wantFood = "hotdog"
 					validAnswer = True
 				else:
-					s = "Try again, you said " + lastWords;
+					s = "Try again, you said " + lastWords
 					soundhandle.say(s, voice)
 					time.sleep(4)
 					s = "Do you need the food options again?"
@@ -524,7 +532,7 @@ def main():
 	s = "Do you need the nurse?"
 	soundhandle.say(s, voice)
 	time.sleep(4)
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		listening = True
 		while(listening):
@@ -542,7 +550,7 @@ def main():
 			time.sleep(3)
 			validAnswer = True
 		else:
-			s = "Try again, you said " + lastWords;
+			s = "Try again, you said " + lastWords
 			soundhandle.say(s, voice)
 			time.sleep(4)
 
@@ -561,7 +569,7 @@ def main():
 	s = "Are you ready for the report on " + patientName
 	soundhandle.say(s, voice)
 	time.sleep(5)
-	validAnswer = False;
+	validAnswer = False
 	while(validAnswer == False):
 		listening = True
 		while(listening):
@@ -654,14 +662,9 @@ def turn(angle):
 def callback(data):           
 	global lastWords
 	global listening
-
-	
 	if(listening):	
 		lastWords = data.data
-		listening = False;
-	
-		
-
+		listening = False
 		rospy.loginfo("listening: %s, Hear: %s",listening,data.data) 
 
 
@@ -672,10 +675,16 @@ def talker(moveTime):
 	while(((time.time() - start) < moveTime)):
 		pub.publish(t)
 
+def callback2(data):
+	global foundMarker
+	if(len(data.markers) != 0 and foundMarker == False):
+		foundMarker = data.markers[0].id
+			
+
 def listener():     
      rospy.init_node('listener',anonymous = False)
-     rospy.Subscriber("/recognizer/output", String, callback)  
-	 #talker()   
+     rospy.Subscriber("/recognizer/output", String, callback)  	 
+     rospy.Subscriber("/ar_pose_marker",AlvarMarkers,callback2)
      main()
      rospy.spin() 
 
