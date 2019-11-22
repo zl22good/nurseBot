@@ -689,8 +689,8 @@ def callback2(data):
 
 
 def listener():     
-	global foundMarker
-	foundMarker = "False"
+	 global foundMarker
+	 foundMarker = "False"
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)  	 
      rospy.Subscriber("/ar_pose_marker",AlvarMarkers,callback2)
