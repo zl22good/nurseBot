@@ -72,7 +72,7 @@ def main():
 			movment1 = 260
 			movment2 = .5
 			movment3 = -120
-			
+
 			movment4 = 3
 			movment5 = -100
 			movment6 = .25
@@ -85,6 +85,14 @@ def main():
 	moveFoward(movment4)
 	turn(movment5)
 	moveFoward(movment6)
+
+	#Go back to the nurse station test
+	turn(-movment1)
+	moveFoward(movment6)
+	turn(-movment5)
+	moveFoward(movment4)
+	turn(-movment3)
+	moveFoward(movment2)
 
 	#Scan ar code
 	s = "Hello, Nurse bot here! Please show me your patient marker"
@@ -366,29 +374,59 @@ def main():
 			s = ""
 		if("yes" in lastWords):
 			validAnswer = True
-
-	
-
-	s = "The patients pain level is " + savedPain
-	soundhandle.say(s, voice)
-	time.sleep(4)
-	if(wantNurse == "yes"):
-		s = "The patient would like to see you"
-		soundhandle.say(s, voice)
-		time.sleep(4)
-	else:
-		s = "The patient doesn't need to see you"
-		soundhandle.say(s, voice)
-		time.sleep(4)
-	if(wantFood != "null"):
-		if(wantNurse == "no"):
-			s = "The patient doesn't want any food"
+			s = "The patients pain level is " + savedPain
 			soundhandle.say(s, voice)
 			time.sleep(4)
-		else:
-			s = "The patient would like" + wantFood
+			if(wantNurse == "yes"):
+				s = "The patient would like to see you"
+				soundhandle.say(s, voice)
+				time.sleep(4)
+			else:
+				s = "The patient doesn't need to see you"
+				soundhandle.say(s, voice)
+				time.sleep(4)
+			if(wantFood != "null"):
+				if(wantNurse == "no"):
+					s = "The patient doesn't want any food"
+					soundhandle.say(s, voice)
+					time.sleep(4)
+				else:
+					s = "The patient would like" + wantFood
+					soundhandle.say(s, voice)
+					time.sleep(4)
+
+	#Did the nurse hear the report?
+	validAnswer = False
+	while(validAnswer == False):
+		s = "Did you hear the report? "
+		soundhandle.say(s, voice)
+		time.sleep(3)
+		listening = True
+		while(listening):
+			s = ""
+		if("no" in lastWords):
+			s = "The patients pain level is " + savedPain
 			soundhandle.say(s, voice)
 			time.sleep(4)
+			if(wantNurse == "yes"):
+				s = "The patient would like to see you"
+				soundhandle.say(s, voice)
+				time.sleep(4)
+			else:
+				s = "The patient doesn't need to see you"
+				soundhandle.say(s, voice)
+				time.sleep(4)
+			if(wantFood != "null"):
+				if(wantNurse == "no"):
+					s = "The patient doesn't want any food"
+					soundhandle.say(s, voice)
+					time.sleep(4)
+				else:
+					s = "The patient would like" + wantFood
+					soundhandle.say(s, voice)
+					time.sleep(4)
+		elif("yes" in lastWords):
+			validAnswer = True
 			
 
 
