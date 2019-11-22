@@ -651,8 +651,8 @@ def turn(angle):
 	global t
 	rads = numpy.radians(angle)
 	if(angle < 0):
-		angSpeed = 0.5 * -1
-		rads = rads * -1
+		angSpeed = 0.5 * -1.0
+		rads = rads * -1.0
 	else:
 		angSpeed = 0.5
 	angInvers = angSpeed ** (-1)
