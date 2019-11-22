@@ -650,7 +650,11 @@ def moveFoward(dist):
 def turn(angle):
 	global t
 	rads = numpy.radians(angle)
-	angSpeed = 0.5
+	if(angle < 0):
+		angSpeed = 0.5 * -1
+		rads = rads * -1
+	else:
+		angSpeed = 0.5
 	angInvers = angSpeed ** (-1)
 	sleepTime = rads * angInvers
 	t.angular.z = angSpeed
