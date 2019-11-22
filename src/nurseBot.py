@@ -57,10 +57,10 @@ def main():
 		if("one" in lastWords):
 			s = "Going to room one"
 			soundhandle.say(s, voice)
-			movment1 = 250
+			movment1 = 260
 			movment2 = .5
-			movment3 = -100
-			movment4 = 2
+			movment3 = -110
+			movment4 = 1
 			movment5 = -100
 			movment6 = .25
 			validAnswer = True
