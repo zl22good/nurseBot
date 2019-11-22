@@ -686,15 +686,15 @@ def callback2(data):
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
 	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
-			
+
 
 def listener():     
+	global foundMarker
+	foundMarker = "False"
      rospy.init_node('listener',anonymous = False)
      rospy.Subscriber("/recognizer/output", String, callback)  	 
      rospy.Subscriber("/ar_pose_marker",AlvarMarkers,callback2)
-     global foundMarker
-	 foundMarker = "False"
-	 #main()
+     main()
      rospy.spin() 
 
 if __name__ == '__main__':     
