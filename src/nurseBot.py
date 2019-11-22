@@ -57,11 +57,11 @@ def main():
 		if("one" in lastWords):
 			s = "Going to room one"
 			soundhandle.say(s, voice)
-			movment1 = 240
+			movment1 = 250
 			movment2 = .5
-			movment3 = -90
+			movment3 = -100
 			movment4 = 2
-			movment5 = -90
+			movment5 = -100
 			movment6 = .25
 			validAnswer = True
 
@@ -89,8 +89,8 @@ def main():
 	soundhandle.say(s, voice)
 	time.sleep(2)
 
-	foundMarker = False
-	while(foundMarker == False):
+	foundMarker = "False"
+	while(foundMarker == "False"):
 		s = ""
 
 
@@ -682,8 +682,8 @@ def talker(moveTime):
 
 def callback2(data):
 	global foundMarker
-	if(len(data.markers) != 0 and foundMarker == False):
-		foundMarker = data.markers[0].id
+	if(len(data.markers) != 0 and foundMarker == "False"):
+		foundMarker = str(data.markers[0].id)
 			
 
 def listener():     
