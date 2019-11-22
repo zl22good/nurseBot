@@ -652,11 +652,11 @@ def turn(angle):
 	rads = numpy.radians(angle)
 	if(angle < 0):
 		angSpeed = 0.5 * -1.0
-		rads = rads * -1.0
 	else:
 		angSpeed = 0.5
 	angInvers = angSpeed ** (-1)
 	sleepTime = rads * angInvers
+	rospy.loginfo("Sleep time - %s", sleepTime)
 	t.angular.z = angSpeed
 	talker(sleepTime)
 	t.angular.z = 0
