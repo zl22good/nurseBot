@@ -59,7 +59,7 @@ def main():
 			s = "Going to room one"
 			soundhandle.say(s, voice)
 			movment1 = 260
-			movment2 = .5
+			movment2 = .75
 			movment3 = -120
 			movment4 = 1.5
 			movment5 = -90
@@ -70,10 +70,10 @@ def main():
 			s = "Going to room two"
 			soundhandle.say(s, voice)
 			movment1 = 260
-			movment2 = .5
-			movment3 = -110
+			movment2 = .75
+			movment3 = -105
 			movment4 = 3
-			movment5 = -100
+			movment5 = -95
 			movment6 = .25
 			validAnswer = True
 
