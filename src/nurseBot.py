@@ -275,7 +275,7 @@ def main():
 				soundhandle.say(s, voice)
 				time.sleep(4)
 		if(wantFood == "yes"):
-			s = "Your options are Tuna, Pizza, Salad, or Hotdog"
+			s = "Your options are Tuna, Pizza, Hotdog, or Salad"
 			soundhandle.say(s, voice)
 			time.sleep(6)
 			validAnswer = False
@@ -345,7 +345,7 @@ def main():
 			time.sleep(4)
 
 	#Go back to the nurse station
-	turn(movment1)
+	turn(-movment1)
 	moveFoward(movment6)
 	turn(-movment3)
 	moveFoward(movment4)
@@ -448,7 +448,7 @@ def getPatientdata():
 		birthYear1 = "two thousand sixteen"
 		birthYear2 = "twenty sixteen"
 		birthMonth1 = "febuary"
-		birthMonth2 = "six"
+		birthMonth2 = "two"
 		birthDay = "thirty"
 
 		
