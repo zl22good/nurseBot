@@ -471,6 +471,7 @@ def moveFoward(dist):
 	t.linear.x = speed
 	talker(sleepTime)
 	t.linear.x = 0
+	time.sleep(1)
 
 
 
@@ -488,7 +489,7 @@ def turn(angle):
 	t.angular.z = angSpeed
 	talker(sleepTime)
 	t.angular.z = 0
-	#time.sleep(1)
+	time.sleep(1)
 
 	
 	
@@ -507,7 +508,7 @@ def talker(moveTime):
 	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist,queue_size=10)
 	while(((time.time() - start) < moveTime)):
 		pub.publish(t)
-	time.sleep(1)
+	
 
 def callback2(data):
 	global foundMarker
