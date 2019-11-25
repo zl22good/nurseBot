@@ -442,7 +442,7 @@ def getPatientdata():
 		birthYear2 = "twenty zero four"
 		birthMonth1 = "september"
 		birthMonth2 = "nine"
-		birthDay = "three"
+		birthDay = "seven"
 	elif foundMarker == "3":
 		patientName = "Bob"
 		birthYear1 = "two thousand sixteen"
