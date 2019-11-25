@@ -58,7 +58,7 @@ def main():
 		if("one" in lastWords):
 			s = "Going to room one"
 			soundhandle.say(s, voice)
-			movment1 = 235
+			movment1 = 240
 			movment2 = .75
 			movment3 = -90
 			movment4 = 1.5
@@ -69,7 +69,7 @@ def main():
 		elif("two" in lastWords):
 			s = "Going to room two"
 			soundhandle.say(s, voice)
-			movment1 = 235
+			movment1 = 240
 			movment2 = .75
 			movment3 = -90
 			movment4 = 3
@@ -488,7 +488,7 @@ def turn(angle):
 	t.angular.z = angSpeed
 	talker(sleepTime)
 	t.angular.z = 0
-	time.sleep(1)
+	#time.sleep(1)
 
 	
 	
@@ -507,6 +507,7 @@ def talker(moveTime):
 	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist,queue_size=10)
 	while(((time.time() - start) < moveTime)):
 		pub.publish(t)
+	time.sleep(1)
 
 def callback2(data):
 	global foundMarker
