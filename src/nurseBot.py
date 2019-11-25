@@ -43,7 +43,7 @@ def main():
 	wantFood = "null"
 	wantNurse = "null"
 	foundMarker = "null"
-	voice = 'voice_rab_diphone'
+	voice = 'voice_kal_diphone'
 	
 	#Wait for nurse to tell which room to see
 	validAnswer = False
