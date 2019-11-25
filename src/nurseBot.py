@@ -43,7 +43,7 @@ def main():
 	wantFood = "null"
 	wantNurse = "null"
 	foundMarker = "null"
-	voice = 'voice_kal_diphone'
+	voice = 'voice_ked_diphone'
 	
 	#Wait for nurse to tell which room to see
 	validAnswer = False
@@ -104,7 +104,7 @@ def main():
 	while(foundMarker == "False"):
 		s = ""
 	
-	rospy.loginfo("foundMarker - %s", foundMarker)
+	#rospy.loginfo("foundMarker - %s", foundMarker)
 
 
 	#Get the patients data
@@ -484,7 +484,7 @@ def turn(angle):
 		angSpeed = 0.5
 	angInvers = angSpeed ** (-1)
 	sleepTime = rads * angInvers
-	rospy.loginfo("Sleep time - %s", sleepTime)
+	#rospy.loginfo("Sleep time - %s", sleepTime)
 	t.angular.z = angSpeed
 	talker(sleepTime)
 	t.angular.z = 0
@@ -497,7 +497,7 @@ def callback(data):
 	if(listening):	
 		lastWords = data.data
 		listening = False
-		rospy.loginfo("listening: %s, Hear: %s",listening,data.data) 
+		#rospy.loginfo("listening: %s, Hear: %s",listening,data.data) 
 
 
 def talker(moveTime):     
@@ -511,7 +511,7 @@ def callback2(data):
 	global foundMarker
 	if(len(data.markers) != 0 and foundMarker == "False"):
 		foundMarker = str(data.markers[0].id)
-	rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
+	#rospy.loginfo("Len - %s | foundMarker - %s", len(data.markers), foundMarker)
 
 
 def listener():     
