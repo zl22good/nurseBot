@@ -85,16 +85,6 @@ def main():
 	turn(movment5)
 	moveFoward(movment6)
 
-	time.sleep(8)
-
-	#Go back to the nurse station test
-	turn(-movment1)
-	moveFoward(movment6)
-	turn(-movment3)
-	moveFoward(movment4)
-	turn(-movment5)
-	moveFoward(movment2)
-
 	#Scan ar code
 	s = "Hello, Nurse bot here! Please show me your patient marker"
 	soundhandle.say(s, voice)
