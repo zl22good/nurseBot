@@ -58,9 +58,9 @@ def main():
 		if("one" in lastWords):
 			s = "Going to room one"
 			soundhandle.say(s, voice)
-			movment1 = 260
+			movment1 = 180
 			movment2 = .75
-			movment3 = -120
+			movment3 = -90
 			movment4 = 1.5
 			movment5 = -90
 			movment6 = .25
@@ -69,11 +69,11 @@ def main():
 		elif("two" in lastWords):
 			s = "Going to room two"
 			soundhandle.say(s, voice)
-			movment1 = 260
+			movment1 = 180
 			movment2 = .75
-			movment3 = -105
+			movment3 = -90
 			movment4 = 3
-			movment5 = -95
+			movment5 = -90
 			movment6 = .25
 			validAnswer = True
 
