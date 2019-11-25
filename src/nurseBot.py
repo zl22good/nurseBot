@@ -488,6 +488,7 @@ def turn(angle):
 	t.angular.z = angSpeed
 	talker(sleepTime)
 	t.angular.z = 0
+	time.sleep(1)
 
 	
 	
