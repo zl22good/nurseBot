@@ -432,20 +432,20 @@ def getPatientdata():
 	if foundMarker == "1":
 		patientName = "Zachary"
 		birthYear1 = "nineteen ninety"
-		birthYear2 = "nineteen ninety"
+		birthYear2 = "nine"
 		birthMonth1 = "june"
 		birthMonth2 = "six"
 		birthDay = "nineteen"
 	elif foundMarker == "2":
 		patientName = "Sarah"
 		birthYear1 = "two thousand four"
-		birthYear2 = "twenty zero four"
+		birthYear2 = "two"
 		birthMonth1 = "september"
 		birthMonth2 = "nine"
 		birthDay = "seven"
 	elif foundMarker == "3":
 		patientName = "Bob"
-		birthYear1 = "two thousand sixteen"
+		birthYear1 = "two"
 		birthYear2 = "twenty sixteen"
 		birthMonth1 = "febuary"
 		birthMonth2 = "two"
