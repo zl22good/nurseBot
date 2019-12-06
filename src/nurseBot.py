@@ -377,7 +377,7 @@ def main():
 					soundhandle.say(s, voice)
 					time.sleep(4)
 				if(wantFood != "null"):
-					if(wantNurse == "no"):
+					if(wantFood == "no"):
 						s = "The patient doesn't want any food"
 						soundhandle.say(s, voice)
 						time.sleep(4)
